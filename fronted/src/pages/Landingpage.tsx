@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const features = [
     {
@@ -41,7 +43,12 @@ export default function LandingPage() {
               <a href="#" className="text-white hover:text-gray-200">
                 Resources
               </a>
-              <button className="bg-white text-black px-4 py-2 rounded-3xl hover:bg-gray-200">
+              <button
+                onClick={() => {
+                  navigate("/signin");
+                }}
+                className="bg-white text-black px-4 py-2 rounded-3xl hover:bg-gray-200"
+              >
                 Get Started
               </button>
             </div>
@@ -63,7 +70,12 @@ export default function LandingPage() {
             <a href="#" className="block text-white py-2">
               Resources
             </a>
-            <button className="w-full mt-4 bg-white text-black px-6 py-2 rounded-sm hover:bg-gray-100">
+            <button
+              onClick={() => {
+                navigate("/signin");
+              }}
+              className="w-full mt-4 bg-white text-black px-6 py-2 rounded-sm hover:bg-gray-100"
+            >
               Get Started
             </button>
           </div>
@@ -92,7 +104,12 @@ export default function LandingPage() {
             <p className="text-xl mb-8">
               Begin blogging for free—zero commitments!
             </p>
-            <button className="bg-white text-black px-6 py-3 text-lg font-medium rounded-3xl hover:bg-gray-200">
+            <button
+              onClick={() => {
+                navigate("/signin");
+              }}
+              className="bg-white text-black px-6 py-3 text-lg font-medium rounded-3xl hover:bg-gray-200"
+            >
               Get Started
             </button>
           </motion.div>
